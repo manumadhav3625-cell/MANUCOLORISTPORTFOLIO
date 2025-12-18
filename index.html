@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manu Madhav | DI Colorist</title>
+  <title>Manu Madhav | DI Colorist & Editor</title>
 
   <!-- SEO Meta -->
-  <meta name="description" content="Professional DI Colorist with 5+ years of experience in color grading, look development, and digital intermediate workflows for films and commercials." />
-  <meta name="keywords" content="Manu Madhav, DI Colorist, color grading, DaVinci Resolve, digital intermediate, film colorist, cinematic look development, Thiruvananthapuram" />
+  <meta name="description" content="Professional DI Colorist and Editor with 5+ years of experience in color grading, editing, conforming, and digital intermediate workflows for films and commercials." />
+  <meta name="keywords" content="Manu Madhav, DI Colorist, Editor, Conforming Artist, color grading, DaVinci Resolve, digital intermediate, film colorist, cinematic look development, Thiruvananthapuram" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <!-- Google Font -->
@@ -17,6 +16,7 @@
 
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: "Inter", Arial, sans-serif;
@@ -27,11 +27,6 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      animation: fadeIn 0.9s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .container {
@@ -43,11 +38,6 @@
       box-shadow: 0 0 25px rgba(0,0,0,0.6);
       text-align: center;
       margin: 40px 20px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .container:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 35px rgba(0,0,0,0.8);
     }
 
     .profile-photo {
@@ -62,30 +52,37 @@
 
     h1 {
       font-size: 28px;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       color: #ffbf3c;
       letter-spacing: 1px;
     }
+
     h2 {
       font-size: 16px;
       font-weight: 400;
       color: #bdbdbd;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
+
     p {
       color: #bdbdbd;
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
-    strong { font-weight: 600; color: #f7f7f7; }
+
+    strong {
+      color: #f7f7f7;
+      font-weight: 600;
+    }
 
     .button-group {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 12px;
+      margin-bottom: 25px;
       flex-wrap: wrap;
     }
+
     .link-btn {
       background: linear-gradient(120deg, #ffbf3c, #ff7a3c);
       color: #0b0b0e;
@@ -94,15 +91,11 @@
       border-radius: 25px;
       font-weight: 600;
       font-size: 14px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
+
     .link-btn:hover {
-      opacity: 0.92;
-      transform: scale(1.05) translateY(-1px);
+      transform: scale(1.05);
       box-shadow: 0 0 15px rgba(255,191,60,0.4);
     }
 
@@ -121,9 +114,9 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-top: 12px;
     }
+
     .skills li {
       background-color: #1e1e25;
       padding: 6px 12px;
@@ -131,51 +124,6 @@
       font-size: 12px;
       color: #d1d1d1;
       border: 1px solid #2c2c38;
-      white-space: nowrap;
-    }
-
-    .ba-gallery {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .ba-pair {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .ba-frame {
-      width: 320px;
-      height: 180px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 2px solid #25252d;
-      background: #0f0f14;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      cursor: pointer;
-    }
-    .ba-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-      display: block;
-    }
-    .ba-frame:hover img { transform: scale(1.03); }
-
-    .ba-labels {
-      display: flex;
-      justify-content: space-between;
-      width: 660px;
-      max-width: 100%;
-      margin: 0 auto;
-      font-size: 12px;
-      color: #a0a0a0;
-      letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
     .contact {
@@ -184,11 +132,11 @@
       margin-top: 20px;
       line-height: 1.8;
     }
+
     .contact a {
       color: #ffbf3c;
       text-decoration: none;
     }
-    .contact a:hover { text-decoration: underline; }
 
     footer {
       font-size: 11px;
@@ -196,75 +144,48 @@
       margin-top: 35px;
     }
 
-    .lightbox-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    .lightbox-overlay img {
-      max-width: 92%;
-      max-height: 92%;
-      border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.9);
-    }
-    .lightbox-overlay span {
-      position: fixed;
-      top: 18px;
-      right: 22px;
-      font-size: 26px;
-      color: #f2f2f2;
-      cursor: pointer;
-      font-weight: 600;
-      user-select: none;
-    }
-
     @media (max-width: 600px) {
       .container { padding: 25px; }
-      .ba-pair { flex-direction: column; }
-      .ba-frame { width: 100%; height: auto; aspect-ratio: 16/9; }
-      .button-group { flex-direction: column; gap: 8px; }
-    }
-    @media (max-width: 480px) {
-      h1 { font-size: 22px; }
+      h1 { font-size: 24px; }
       h2 { font-size: 14px; }
       p { font-size: 13px; }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <img src="profile.jpg" alt="Manu Madhav Photo" class="profile-photo" />
+
+    <img src="profile.jpg" alt="Manu Madhav" class="profile-photo" />
 
     <h1>Manu Madhav</h1>
-    <h2>DI Colorist</h2>
+    <h2>DI Colorist & Editor</h2>
 
     <p>
-      I am a <strong>DI Colorist</strong> with over <strong>5 years of professional experience</strong> in cinematic color grading, look development, and digital intermediate workflows.  
-      Since <strong>2020</strong>, I’ve been part of <strong>Dcloud Creations, Thiruvananthapuram</strong>, collaborating on ad films, feature projects, and branded campaigns that demand precise visual storytelling and strong color aesthetics.
+      I am a <strong>DI Colorist</strong> with over <strong>5+ years of professional experience</strong> in cinematic color grading, look development, and digital intermediate workflows.  
+      Since <strong>2020</strong>, I’ve been part of <strong>Dcloud Creations, Thiruvananthapuram</strong>, working on ad films, feature projects, and branded campaigns requiring precise visual storytelling and refined color aesthetics.
       <br /><br />
-      Over the years, I’ve worked across diverse projects — from high-end commercials and digital films to feature-length content — gaining deep expertise in <strong>color pipeline design, post-production workflow, and delivery structure</strong>.  
-      My goal is to blend technical precision with creative sensitivity, shaping tone, mood, and narrative through color.
+      In addition to color grading, I have <strong>hands-on experience in video editing and conforming</strong>, including timeline management, XML/AAF/EDL workflows, relinking camera originals, and preparing projects for grading and final delivery.  
+      This end-to-end post-production knowledge helps maintain <strong>technical accuracy, clean pipelines, and smooth transitions</strong> between edit, grade, and output.
       <br /><br />
-      My commercial portfolio includes collaborations with <strong>BMW Motorrad,Starsports, Air India, Royal Enfield, Redmi, Spotify, Fastrack, Hotstar, Free Fire</strong>, and other major brands.  
-      I’ve also graded a variety of <strong>films, web series, documentaries, and music videos</strong>, ensuring each frame aligns with the director’s vision and cinematic intent.
+      My professional work spans <strong>commercials, digital films, feature films, web series, documentaries, and music videos</strong>, with strong expertise in <strong>color pipeline design, conform workflows, and delivery standards</strong>.
       <br /><br />
-      I’ve collected my major works for viewing — you can explore them through my <strong>Linktree downlink below</strong>.
+      I have collaborated with brands such as <strong>BMW Motorrad, Star Sports, Air India, Royal Enfield, Redmi, Spotify, Fastrack, Hotstar, Free Fire</strong>, and others, ensuring every frame aligns with the director’s vision and cinematic intent.
+      <br /><br />
+      Selected works and showreels are available through my <strong>Linktree below</strong>.
     </p>
 
-    <!-- 🔗 Buttons -->
     <div class="button-group">
-      <a href="https://linktr.ee/manumadhav3625" target="_blank" class="link-btn">🔗 <span>Visit My Linktree</span></a>
-      <a href="https://www.linkedin.com/in/manu-madhav-6358251b4" target="_blank" class="link-btn">💼 <span>View LinkedIn Profile</span></a>
+      <a href="https://linktr.ee/manumadhav3625" target="_blank" class="link-btn">🔗 Visit My Linktree</a>
+      <a href="https://www.linkedin.com/in/manu-madhav-6358251b4" target="_blank" class="link-btn">💼 LinkedIn Profile</a>
     </div>
 
     <div class="section-title">Skills & Tools</div>
     <ul class="skills">
       <li>DaVinci Resolve</li>
-      <li>Color Pipeline</li>
+      <li>Color Grading</li>
+      <li>Editing</li>
+      <li>Conforming (XML / AAF / EDL)</li>
       <li>Look Development</li>
       <li>Film Emulation</li>
       <li>Skin Tone Grading</li>
@@ -272,57 +193,15 @@
       <li>Premiere Pro</li>
     </ul>
 
-    <div class="section-title">Before / After Grades</div>
-    <div class="ba-gallery">
-      <div class="ba-labels"><span>Before</span><span>After</span></div>
-
-      <div class="ba-pair">
-        <div class="ba-frame"><img src="before1.jpg" alt="Before Grade 1"></div>
-        <div class="ba-frame"><img src="after1.jpg" alt="After Grade 1"></div>
-      </div>
-
-      <div class="ba-pair">
-        <div class="ba-frame"><img src="before2.jpg" alt="Before Grade 2"></div>
-        <div class="ba-frame"><img src="after2.jpg" alt="After Grade 2"></div>
-      </div>
-
-      <div class="ba-pair">
-        <div class="ba-frame"><img src="before3.jpg" alt="Before Grade 3"></div>
-        <div class="ba-frame"><img src="after3.jpg" alt="After Grade 3"></div>
-      </div>
-    </div>
-
     <div class="section-title">Contact</div>
     <p class="contact">
       📧 <a href="mailto:manumadhav3625@gmail.com">manumadhav3625@gmail.com</a><br />
-      📞 917012903297<br />
-      📍 Based in Thiruvananthapuram, India · Available for freelance & studio collaborations
+      📞 +91 70129 03297<br />
+      📍 Thiruvananthapuram, India · Available for freelance & studio collaborations
     </p>
 
-    <footer>© 2025 Manu Madhav · DI Colorist Portfolio</footer>
+    <footer>© 2025 Manu Madhav · DI Colorist & Editor</footer>
+
   </div>
-
-  <!-- Lightbox -->
-  <script>
-    document.querySelectorAll(".ba-frame img").forEach(img => {
-      img.addEventListener("click", () => {
-        const overlay = document.createElement("div");
-        overlay.className = "lightbox-overlay";
-
-        const bigImg = document.createElement("img");
-        bigImg.src = img.src;
-
-        const closeBtn = document.createElement("span");
-        closeBtn.textContent = "×";
-
-        closeBtn.addEventListener("click", () => overlay.remove());
-        overlay.addEventListener("click", e => { if (e.target === overlay) overlay.remove(); });
-
-        overlay.appendChild(bigImg);
-        overlay.appendChild(closeBtn);
-        document.body.appendChild(overlay);
-      });
-    });
-  </script>
 </body>
 </html>
