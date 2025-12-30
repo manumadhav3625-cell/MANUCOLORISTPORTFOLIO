@@ -6,12 +6,10 @@
   <title>Manu Madhav | DI Colorist & Editor</title>
 
   <!-- SEO Meta -->
-  <meta name="description" content="Professional DI Colorist and Editor with 5+ years of experience in color grading, editing, conforming, and digital intermediate workflows for films and commercials." />
-  <meta name="keywords" content="Manu Madhav, DI Colorist, Editor, Conforming Artist, color grading, DaVinci Resolve, digital intermediate, film colorist, cinematic look development, Thiruvananthapuram" />
+  <meta name="description" content="Professional DI Colorist & Editor with 5+ years of experience in color grading, editing, conforming, and digital intermediate workflows." />
+  <meta name="keywords" content="DI Colorist, Editor, Conforming Artist, DaVinci Resolve, Color Grading, Manu Madhav" />
 
   <link rel="icon" type="image/png" href="favicon.png" />
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -20,11 +18,9 @@
     body {
       margin: 0;
       font-family: "Inter", Arial, sans-serif;
-      background-color: #0b0b0e;
+      background: #0b0b0e;
       color: #f2f2f2;
-      line-height: 1.6;
       display: flex;
-      align-items: center;
       justify-content: center;
       min-height: 100vh;
     }
@@ -32,7 +28,7 @@
     .container {
       max-width: 780px;
       width: 100%;
-      background-color: #131319;
+      background: #131319;
       padding: 40px;
       border-radius: 20px;
       box-shadow: 0 0 25px rgba(0,0,0,0.6);
@@ -46,96 +42,114 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #ffbf3c;
-      box-shadow: 0 0 20px rgba(255,191,60,0.3);
       margin-bottom: 18px;
     }
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 6px;
-      color: #ffbf3c;
-      letter-spacing: 1px;
-    }
+    h1 { color: #ffbf3c; margin-bottom: 6px; }
+    h2 { font-size: 16px; font-weight: 400; color: #bdbdbd; margin-bottom: 22px; }
+    p  { font-size: 14px; color: #bdbdbd; line-height: 1.7; }
 
-    h2 {
-      font-size: 16px;
-      font-weight: 400;
-      color: #bdbdbd;
-      margin-bottom: 22px;
-    }
-
-    p {
-      color: #bdbdbd;
-      font-size: 14px;
-      margin-bottom: 22px;
-    }
-
-    strong {
-      color: #f7f7f7;
-      font-weight: 600;
-    }
+    strong { color: #fff; }
 
     .button-group {
       display: flex;
       justify-content: center;
       gap: 12px;
-      margin-bottom: 25px;
+      margin: 25px 0;
       flex-wrap: wrap;
     }
 
     .link-btn {
       background: linear-gradient(120deg, #ffbf3c, #ff7a3c);
       color: #0b0b0e;
-      text-decoration: none;
       padding: 10px 18px;
       border-radius: 25px;
       font-weight: 600;
-      font-size: 14px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .link-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255,191,60,0.4);
+      text-decoration: none;
     }
 
     .section-title {
       color: #ffbf3c;
       font-size: 15px;
-      margin-top: 30px;
+      margin-top: 35px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
     }
 
-    .skills {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 12px;
+    /* ===== BEFORE / AFTER SLIDER ===== */
+    .ba-slider {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      aspect-ratio: 16 / 9;
+      margin: 25px auto;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 2px solid #25252d;
+      background: #000;
     }
 
-    .skills li {
-      background-color: #1e1e25;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      color: #d1d1d1;
-      border: 1px solid #2c2c38;
+    .ba-slider img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
     }
+
+    .before-img { z-index: 1; }
+
+    .after-img {
+      z-index: 2;
+      clip-path: inset(0 0 0 50%);
+    }
+
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background: #ffbf3c;
+      z-index: 3;
+      cursor: ew-resize;
+    }
+
+    .ba-handle::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -14px;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #ffbf3c;
+      box-shadow: 0 0 15px rgba(255,191,60,0.6);
+    }
+
+    .ba-label {
+      position: absolute;
+      top: 10px;
+      padding: 6px 10px;
+      font-size: 11px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      z-index: 4;
+    }
+
+    .ba-label.before { left: 10px; }
+    .ba-label.after  { right: 10px; }
 
     .contact {
       font-size: 13px;
       color: #a0a0a0;
       margin-top: 20px;
       line-height: 1.8;
-    }
-
-    .contact a {
-      color: #ffbf3c;
-      text-decoration: none;
     }
 
     footer {
@@ -146,62 +160,100 @@
 
     @media (max-width: 600px) {
       .container { padding: 25px; }
-      h1 { font-size: 24px; }
-      h2 { font-size: 14px; }
-      p { font-size: 13px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <img src="profile.jpg" alt="Manu Madhav" class="profile-photo" />
+  <img src="profile.jpg" alt="Manu Madhav" class="profile-photo" />
 
-    <h1>Manu Madhav</h1>
-    <h2>DI Colorist & Editor</h2>
+  <h1>Manu Madhav</h1>
+  <h2>DI Colorist & Editor</h2>
 
-    <p>
-      I am a <strong>DI Colorist</strong> with over <strong>5+ years of professional experience</strong> in cinematic color grading, look development, and digital intermediate workflows.  
-      Since <strong>2020</strong>, I’ve been part of <strong>Dcloud Creations, Thiruvananthapuram</strong>, working on ad films, feature projects, and branded campaigns requiring precise visual storytelling and refined color aesthetics.
-      <br /><br />
-      In addition to color grading, I have <strong>hands-on experience in video editing and conforming</strong>, including timeline management, XML/AAF/EDL workflows, relinking camera originals, and preparing projects for grading and final delivery.  
-      This end-to-end post-production knowledge helps maintain <strong>technical accuracy, clean pipelines, and smooth transitions</strong> between edit, grade, and output.
-      <br /><br />
-      My professional work spans <strong>commercials, digital films, feature films, web series, documentaries, and music videos</strong>, with strong expertise in <strong>color pipeline design, conform workflows, and delivery standards</strong>.
-      <br /><br />
-      I have collaborated with brands such as <strong>BMW Motorrad, Star Sports, Air India, Royal Enfield, Redmi, Spotify, Fastrack, Hotstar, Free Fire</strong>, and others, ensuring every frame aligns with the director’s vision and cinematic intent.
-      <br /><br />
-      Selected works and showreels are available through my <strong>Linktree below</strong>.
-    </p>
+  <!-- ✅ FIXED DESCRIPTION -->
+  <p>
+    I am a <strong>DI Colorist</strong> with over <strong>5 years of professional experience</strong> in cinematic color grading, look development, and digital intermediate workflows for films, commercials, and branded content.
+    My work focuses on enhancing visual storytelling through balanced contrast, accurate skin tones, refined color palettes, and mood-driven grading that supports the director’s creative vision.
+    <br /><br />
+    Alongside color grading, I also have <strong>hands-on experience in video editing and conforming</strong>, allowing me to manage projects smoothly from offline edit to final delivery while maintaining technical accuracy and creative consistency.
+    This end-to-end understanding of post-production helps ensure clean workflows and seamless collaboration across departments.
+    <br /><br />
+    I have worked across <strong>commercial films, digital advertisements, feature films, web series, documentaries, and music videos</strong>, delivering polished, professional results that meet industry and broadcast standards.
+    <br /><br />
+    <strong>To view my works and detailed portfolio, please click on my Linktree below.</strong>
+  </p>
 
-    <div class="button-group">
-      <a href="https://linktr.ee/manumadhav3625" target="_blank" class="link-btn">🔗 Visit My Linktree</a>
-      <a href="https://www.linkedin.com/in/manu-madhav-6358251b4" target="_blank" class="link-btn">💼 LinkedIn Profile</a>
-    </div>
-
-    <div class="section-title">Skills & Tools</div>
-    <ul class="skills">
-      <li>DaVinci Resolve</li>
-      <li>Color Grading</li>
-      <li>Editing</li>
-      <li>Conforming (XML / AAF / EDL)</li>
-      <li>Look Development</li>
-      <li>Film Emulation</li>
-      <li>Skin Tone Grading</li>
-      <li>DCP Pipeline & Renders</li>
-      <li>Premiere Pro</li>
-    </ul>
-
-    <div class="section-title">Contact</div>
-    <p class="contact">
-      📧 <a href="mailto:manumadhav3625@gmail.com">manumadhav3625@gmail.com</a><br />
-      📞 +91 70129 03297<br />
-      📍 Thiruvananthapuram, India · Available for freelance & studio collaborations
-    </p>
-
-    <footer>© 2025 Manu Madhav · DI Colorist & Editor</footer>
-
+  <div class="button-group">
+    <a href="https://linktr.ee/manumadhav3625" target="_blank" class="link-btn">🔗 Visit My Linktree</a>
+    <a href="https://www.linkedin.com/in/manu-madhav-6358251b4" target="_blank" class="link-btn">💼 LinkedIn</a>
   </div>
+
+  <div class="section-title">Before / After Grades</div>
+
+  <!-- SLIDER 1 -->
+  <div class="ba-slider">
+    <img src="before1.jpg" class="before-img">
+    <img src="after1.jpg" class="after-img">
+    <div class="ba-label before">Before</div>
+    <div class="ba-label after">After</div>
+    <div class="ba-handle"></div>
+  </div>
+
+  <!-- SLIDER 2 -->
+  <div class="ba-slider">
+    <img src="before2.jpg" class="before-img">
+    <img src="after2.jpg" class="after-img">
+    <div class="ba-label before">Before</div>
+    <div class="ba-label after">After</div>
+    <div class="ba-handle"></div>
+  </div>
+
+  <!-- SLIDER 3 -->
+  <div class="ba-slider">
+    <img src="before3.jpg" class="before-img">
+    <img src="after3.jpg" class="after-img">
+    <div class="ba-label before">Before</div>
+    <div class="ba-label after">After</div>
+    <div class="ba-handle"></div>
+  </div>
+
+  <div class="section-title">Contact</div>
+  <p class="contact">
+    📧 manumadhav3625@gmail.com<br>
+    📞 +91 70129 03297<br>
+    📍 Thiruvananthapuram, India
+  </p>
+
+  <footer>© 2025 Manu Madhav · DI Colorist & Editor</footer>
+</div>
+
+<script>
+  document.querySelectorAll(".ba-slider").forEach(slider => {
+    const handle = slider.querySelector(".ba-handle");
+    const afterImg = slider.querySelector(".after-img");
+    let dragging = false;
+
+    const move = x => {
+      const rect = slider.getBoundingClientRect();
+      let pos = ((x - rect.left) / rect.width) * 100;
+      pos = Math.max(0, Math.min(100, pos));
+      handle.style.left = pos + "%";
+      afterImg.style.clipPath = `inset(0 0 0 ${pos}%)`;
+    };
+
+    handle.addEventListener("mousedown", () => dragging = true);
+    window.addEventListener("mouseup", () => dragging = false);
+    window.addEventListener("mousemove", e => dragging && move(e.clientX));
+
+    handle.addEventListener("touchstart", () => dragging = true);
+    window.addEventListener("touchend", () => dragging = false);
+    window.addEventListener("touchmove", e => {
+      if (dragging) move(e.touches[0].clientX);
+    });
+  });
+</script>
+
 </body>
 </html>
