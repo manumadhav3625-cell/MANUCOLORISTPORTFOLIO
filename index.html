@@ -1,378 +1,649 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manu Madhav | DI Colorist & Editor</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manu Madhav | DI Colorist & Colorist</title>
 
-  <!-- SEO Meta -->
-  <meta name="description" content="Professional DI Colorist & Editor with 5+ years of experience in color grading, editing, conforming, and digital intermediate workflows." />
-  <meta name="keywords" content="DI Colorist, Editor, Conforming Artist, DaVinci Resolve, Color Grading, Manu Madhav" />
+<!-- SEO Meta -->
+<meta name="description" content="Manu Madhav — DI Colorist with 6+ years of experience in color grading, look development, and digital intermediate workflows for commercials, campaigns, and branded content." />
+<meta name="keywords" content="DI Colorist, Colorist, Editor, Conforming Artist, DaVinci Resolve, Color Grading, Manu Madhav" />
 
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <style>
-    * { box-sizing: border-box; }
+<style>
+  :root {
+    --bg: #08080b;
+    --panel: #121218;
+    --panel-2: #16161d;
+    --line: #24242c;
+    --text: #f2f2f2;
+    --muted: #9a9aa4;
+    --gold: #ffbf3c;
+    --orange: #ff7a3c;
+    --accent-grad: linear-gradient(120deg, var(--gold), var(--orange));
+    --radius: 18px;
+  }
 
-    body {
-      margin: 0;
-      font-family: "Inter", Arial, sans-serif;
-      background: #0b0b0e;
-      color: #f2f2f2;
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
-    }
+  * { box-sizing: border-box; }
 
-    .container {
-      max-width: 780px;
-      width: 100%;
-      background: #131319;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.6);
-      text-align: center;
-      margin: 40px 20px;
-      position: relative;
-      overflow: hidden;
-    }
+  html { scroll-behavior: smooth; }
 
-    .container::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #ffbf3c, #ff7a3c, #ffbf3c);
-    }
+  body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
 
-    .profile-photo {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #ffbf3c;
-      margin-bottom: 18px;
-      box-shadow: 0 0 25px rgba(255,191,60,0.25);
-    }
+  /* ===== AURORA BACKDROP ===== */
+  .aurora {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .aurora span {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.35;
+    animation: float 16s ease-in-out infinite;
+  }
+  .aurora span:nth-child(1) {
+    width: 420px; height: 420px;
+    background: var(--gold);
+    top: -120px; left: -100px;
+  }
+  .aurora span:nth-child(2) {
+    width: 380px; height: 380px;
+    background: var(--orange);
+    bottom: -140px; right: -80px;
+    animation-delay: -6s;
+  }
+  .aurora span:nth-child(3) {
+    width: 300px; height: 300px;
+    background: #4c3cff;
+    opacity: 0.18;
+    top: 40%; left: 60%;
+    animation-delay: -11s;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    50% { transform: translate(30px,-30px) scale(1.08); }
+  }
 
-    h1 { color: #ffbf3c; margin-bottom: 6px; }
-    h2 { font-size: 16px; font-weight: 400; color: #bdbdbd; margin-bottom: 22px; }
-    p  { font-size: 14px; color: #bdbdbd; line-height: 1.7; }
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 20px 40px;
+  }
 
-    strong { color: #fff; }
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 44px 36px;
+    text-align: center;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+  }
 
-    .button-group {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin: 25px 0;
-      flex-wrap: wrap;
-    }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent-grad);
+  }
 
-    .link-btn {
-      background: linear-gradient(120deg, #ffbf3c, #ff7a3c);
-      color: #0b0b0e;
-      padding: 10px 18px;
-      border-radius: 25px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 14px rgba(255,122,60,0.25);
-    }
+  .profile-photo {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 0 6px rgba(255,191,60,0.08), 0 0 30px rgba(255,191,60,0.25);
+    margin-bottom: 20px;
+  }
 
-    .link-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(255,122,60,0.4);
-    }
+  h1 {
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    background: linear-gradient(120deg, #fff 30%, var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+  }
 
-    .section-title {
-      color: #ffbf3c;
-      font-size: 15px;
-      margin-top: 35px;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+  .role-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(255,191,60,0.08);
+    border: 1px solid rgba(255,191,60,0.25);
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 22px;
+  }
 
-    .section-title::before,
-    .section-title::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #2c2c34, transparent);
-    }
+  .role-badge .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+  }
 
-    /* ===== EXPERIENCE ===== */
-    .experience-card {
-      text-align: left;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(145deg, #191921, #131319);
-      border: 1px solid #25252d;
-      border-radius: 14px;
-      padding: 20px 22px 20px 26px;
-      max-width: 720px;
-      margin: 0 auto 14px;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
+  .bio {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--muted);
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+  }
 
-    .experience-card:hover {
-      transform: translateY(-2px);
-      border-color: #3a3a44;
-    }
+  .bio strong { color: #fff; font-weight: 600; }
 
-    .experience-card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: linear-gradient(180deg, #ffbf3c, #ff7a3c);
-    }
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 28px 0 4px;
+    flex-wrap: wrap;
+  }
 
-    .exp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+  .link-btn {
+    background: var(--accent-grad);
+    color: #0b0b0e;
+    padding: 11px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 13.5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 18px rgba(255,122,60,0.28);
+  }
 
-    .exp-titles { display: flex; flex-direction: column; gap: 2px; }
+  .link-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(255,122,60,0.42);
+  }
 
-    .exp-role {
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-    }
+  .link-btn.ghost {
+    background: rgba(255,255,255,0.04);
+    color: #fff;
+    border: 1px solid var(--line);
+    box-shadow: none;
+  }
+  .link-btn.ghost:hover { border-color: #3a3a44; box-shadow: none; }
 
-    .exp-company {
-      font-size: 13.5px;
-      font-weight: 600;
-      color: #ffbf3c;
-    }
+  /* ===== SECTIONS ===== */
+  section { margin-top: 54px; }
 
-    .exp-duration {
-      font-size: 11.5px;
-      color: #0b0b0e;
-      background: linear-gradient(120deg, #ffbf3c, #ff7a3c);
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-weight: 700;
-      white-space: nowrap;
-      display: flex;
-      align-items: center;
-    }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
 
-    .exp-current-dot {
-      display: inline-block;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #16321f;
-      margin-right: 6px;
-    }
+  .section-head .num {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    border: 1px solid rgba(255,191,60,0.3);
+    border-radius: 8px;
+    padding: 3px 8px;
+  }
 
-    .exp-meta {
-      font-size: 12px;
-      color: #8a8a8a;
-      margin-top: 5px;
-    }
+  .section-head h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    margin: 0;
+    letter-spacing: -0.3px;
+  }
 
-    .exp-list {
-      margin: 12px 0 0;
-      padding-left: 18px;
-      color: #bdbdbd;
-      font-size: 13.5px;
-      line-height: 1.7;
-    }
+  .section-head .rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--line), transparent);
+  }
 
-    .exp-list li { margin-bottom: 5px; }
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
 
-    /* ===== BEFORE / AFTER SLIDER ===== */
-    .ba-slider {
-      position: relative;
-      width: 100%;
-      max-width: 720px;
-      aspect-ratio: 16 / 9;
-      margin: 25px auto;
-      overflow: hidden;
-      border-radius: 14px;
-      border: 2px solid #25252d;
-      background: #000;
-      transition: border-color 0.2s ease;
-    }
+  /* ===== EXPERIENCE TIMELINE ===== */
+  .timeline {
+    position: relative;
+    padding-left: 26px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--gold), var(--line) 90%);
+  }
 
-    .ba-slider:hover { border-color: #3a3a44; }
+  .exp-card {
+    position: relative;
+    background: linear-gradient(150deg, var(--panel-2), var(--panel));
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 24px;
+    margin-bottom: 20px;
+    text-align: left;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .exp-card:hover { transform: translateY(-3px); border-color: #3a3a44; }
 
-    .ba-slider img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: none;
-      user-select: none;
-    }
+  .exp-card::before {
+    content: "";
+    position: absolute;
+    left: -26px;
+    top: 26px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 3px solid var(--gold);
+  }
+  .exp-card.current::before {
+    background: var(--gold);
+    box-shadow: 0 0 12px rgba(255,191,60,0.7);
+  }
 
-    .before-img { z-index: 1; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
-    .after-img {
-      z-index: 2;
-      clip-path: inset(0 0 0 50%);
-    }
+  .exp-role { font-size: 17px; font-weight: 700; color: #fff; font-family: "Space Grotesk", sans-serif; }
+  .exp-company { font-size: 13.5px; font-weight: 600; color: var(--gold); margin-top: 2px; }
 
-    .ba-handle {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 4px;
-      height: 100%;
-      background: #ffbf3c;
-      z-index: 3;
-      cursor: ew-resize;
-    }
+  .exp-duration {
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 5px 13px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .exp-duration.active {
+    color: #0b0b0e;
+    background: var(--accent-grad);
+  }
+  .exp-duration.past {
+    color: var(--muted);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--line);
+  }
 
-    .ba-handle::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: -14px;
-      transform: translateY(-50%);
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: #ffbf3c;
-      box-shadow: 0 0 15px rgba(255,191,60,0.6);
-    }
+  .exp-list {
+    margin: 14px 0 0;
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.75;
+  }
+  .exp-list li { margin-bottom: 6px; }
+  .exp-list li::marker { color: var(--gold); }
 
-    .ba-label {
-      position: absolute;
-      top: 10px;
-      padding: 6px 10px;
-      font-size: 11px;
-      background: rgba(0,0,0,0.6);
-      border-radius: 20px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      z-index: 4;
-    }
+  /* ===== TAGS (skills / projects / brands) ===== */
+  .tag-panel {
+    background: linear-gradient(150deg, var(--panel-2), var(--panel));
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px;
+  }
 
-    .ba-label.before { left: 10px; }
-    .ba-label.after  { right: 10px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; }
 
-    .contact {
-      font-size: 13px;
-      color: #a0a0a0;
-      margin-top: 20px;
-      line-height: 1.8;
-    }
+  .tag {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #e7e7ea;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--line);
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  }
+  .tag:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
 
-    footer {
-      font-size: 11px;
-      color: #707070;
-      margin-top: 35px;
-    }
+  /* ===== EDUCATION ===== */
+  .edu-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(150deg, var(--panel-2), var(--panel));
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 24px;
+    text-align: left;
+  }
+  .edu-icon {
+    flex-shrink: 0;
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    background: var(--accent-grad);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .edu-title { font-weight: 700; font-size: 15px; color: #fff; font-family: "Space Grotesk", sans-serif; }
+  .edu-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
 
-    @media (max-width: 600px) {
-      .container { padding: 25px; }
-      .exp-header { flex-direction: column; }
-    }
-  </style>
+  /* ===== BEFORE / AFTER SLIDER ===== */
+  .ba-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 18px;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: #000;
+    transition: border-color 0.2s ease;
+  }
+  .ba-slider:hover { border-color: #3a3a44; }
+
+  .ba-slider img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+  }
+  .before-img { z-index: 1; }
+  .after-img { z-index: 2; clip-path: inset(0 0 0 50%); }
+
+  .ba-handle {
+    position: absolute; top: 0; left: 50%;
+    width: 3px; height: 100%;
+    background: var(--gold);
+    z-index: 3;
+    cursor: ew-resize;
+  }
+  .ba-handle::before {
+    content: "";
+    position: absolute; top: 50%; left: -15px;
+    transform: translateY(-50%);
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--accent-grad);
+    box-shadow: 0 0 18px rgba(255,191,60,0.6);
+  }
+
+  .ba-label {
+    position: absolute; top: 10px;
+    padding: 6px 12px;
+    font-size: 10.5px;
+    background: rgba(0,0,0,0.65);
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 4;
+  }
+  .ba-label.before { left: 10px; }
+  .ba-label.after { right: 10px; }
+
+  /* ===== CONTACT / FOOTER ===== */
+  .contact-panel {
+    background: linear-gradient(150deg, var(--panel-2), var(--panel));
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px;
+    text-align: center;
+  }
+  .contact-panel .row {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  .contact-panel .row span { color: #fff; }
+
+  footer {
+    text-align: center;
+    font-size: 11.5px;
+    color: #5f5f68;
+    margin: 40px 0 10px;
+  }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 32px 14px 30px; }
+    .hero { padding: 32px 20px; }
+    h1 { font-size: 27px; }
+    .exp-header { flex-direction: column; }
+  }
+</style>
 </head>
 
 <body>
-<div class="container">
 
-  <img src="profile.jpg" alt="Manu Madhav" class="profile-photo" />
+<div class="aurora"><span></span><span></span><span></span></div>
 
-  <h1>Manu Madhav</h1>
-  <h2>DI Colorist & Editor</h2>
+<div class="wrap">
 
-  <!-- ✅ DESCRIPTION WITH BRAND LINE FIXED -->
-  <p>
-    I am a <strong>DI Colorist</strong> with over <strong>5 years of professional experience</strong> in cinematic color grading, look development, and digital intermediate workflows for films, commercials, and branded content.
-    My work focuses on enhancing visual storytelling through balanced contrast, accurate skin tones, refined color palettes, and mood-driven grading that supports the director’s creative vision.
-    <br /><br />
-    Alongside color grading, I also have <strong>hands-on experience in video editing and conforming</strong>, enabling me to manage projects smoothly from offline edit to final delivery while maintaining technical accuracy and creative consistency.
-    <br /><br />
-    From my previous professional portfolio, I have worked on projects for well-established brands including
-    <strong>BMW Motorrad, Air India, Hotstar, Star Sports, Royal Enfield, Redmi, Spotify, Fastrack, Thums Up, Free Fire, DLF Homes, Ultrahuman</strong>.
-    <br /><br />
-    <strong>To view my works and detailed portfolio, please click on my Linktree below.</strong>
-  </p>
+  <!-- HERO -->
+  <div class="hero reveal in">
+    <img src="profile.jpg" alt="Manu Madhav" class="profile-photo" />
+    <h1>Manu Madhav</h1>
+    <div class="role-badge"><span class="dot"></span>DI Colorist &nbsp;|&nbsp; Colorist</div>
 
-  <div class="button-group">
-    <a href="https://linktr.ee/manumadhav3625" target="_blank" class="link-btn">🔗 Visit My Linktree</a>
-    <a href="https://www.linkedin.com/in/manu-madhav-6358251b4" target="_blank" class="link-btn">💼 LinkedIn</a>
-  </div>
+    <p class="bio">
+      I'm a professional <strong>DI Colorist</strong> with over <strong>6 years of experience</strong> in color grading, look development, and post-production finishing. I specialize in transforming footage into visually compelling stories through cinematic color, accurate skin tones, and technically precise workflows.
+      <br /><br />
+      Currently, I work as a <strong>Colorist at YaaS Media</strong>, where I color grade social media campaigns, commercials, and branded content for leading national and international brands. I collaborate closely with directors, cinematographers, and editors to deliver high-quality visuals optimized for digital and broadcast platforms.
+      <br /><br />
+      Previously, I worked at <strong>Dcloud Creation</strong> as a DI Colorist, contributing to commercials, music videos, digital campaigns, and branded content — including projects for
+      <strong>BMW Motorrad, Air India, Royal Enfield, KFC, Fastrack, Spotify, Redmi, Star Sports, Disney+ Hotstar, Moglix, and CEEW</strong>.
+    </p>
 
-  <div class="section-title">Experience</div>
-
-  <div class="experience-card">
-    <div class="exp-header">
-      <div class="exp-titles">
-        <div class="exp-role">DI Colorist</div>
-        <div class="exp-company">YAAS Media</div>
-      </div>
-      <div class="exp-duration"><span class="exp-current-dot"></span>Feb 2026 &ndash; Present</div>
+    <div class="button-group">
+      <a href="https://linktr.ee/manumadhav3625" target="_blank" class="link-btn">🔗 Visit My Linktree</a>
+      <a href="https://www.linkedin.com/in/manu-madhav-6358251b4" target="_blank" class="link-btn ghost">💼 LinkedIn</a>
     </div>
-    <div class="exp-meta">Broadcast Media Production &amp; Distribution · Bengaluru, Karnataka</div>
-    <ul class="exp-list">
-      <li>Leading color grading and look development for YouTube-first video content, delivering cinematic, brand-consistent visuals.</li>
-      <li>Managing digital intermediate workflows from offline edit through final color delivery.</li>
-      <li>Collaborating with editors and producers to maintain technical accuracy and creative consistency across projects.</li>
-    </ul>
   </div>
 
-  <div class="section-title">Before / After Grades</div>
+  <!-- EXPERIENCE -->
+  <section class="reveal">
+    <div class="section-head">
+      <span class="num">01</span>
+      <h3>Experience</h3>
+      <span class="rule"></span>
+    </div>
 
-  <!-- SLIDER 1 -->
-  <div class="ba-slider">
-    <img src="before1.jpg" class="before-img">
-    <img src="after1.jpg" class="after-img">
-    <div class="ba-label before">Before</div>
-    <div class="ba-label after">After</div>
-    <div class="ba-handle"></div>
-  </div>
+    <div class="timeline">
+      <div class="exp-card current">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Colorist</div>
+            <div class="exp-company">YaaS Media</div>
+          </div>
+          <div class="exp-duration active">Feb 2026 &ndash; Present</div>
+        </div>
+        <ul class="exp-list">
+          <li>Color grading social media campaigns, commercials, and branded content using DaVinci Resolve.</li>
+          <li>Working on high-quality visual content for leading national and international brands.</li>
+          <li>Collaborating with directors, cinematographers, and editors to achieve the desired creative vision.</li>
+          <li>Creating cinematic looks while maintaining accurate skin tones and color consistency.</li>
+          <li>Delivering high-quality masters optimized for digital and social media platforms.</li>
+        </ul>
+      </div>
 
-  <!-- SLIDER 2 -->
-  <div class="ba-slider">
-    <img src="before2.jpg" class="before-img">
-    <img src="after2.jpg" class="after-img">
-    <div class="ba-label before">Before</div>
-    <div class="ba-label after">After</div>
-    <div class="ba-handle"></div>
-  </div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">DI Colorist</div>
+            <div class="exp-company">Dcloud Creation</div>
+          </div>
+          <div class="exp-duration past">Jan 2020 &ndash; Dec 2025</div>
+        </div>
+        <ul class="exp-list">
+          <li>Color graded commercials, music videos, branded content, and digital campaigns.</li>
+          <li>Specialized in look development, conforming, online finishing, film emulation, and DCP delivery.</li>
+          <li>Worked closely with editors and cinematographers to maintain creative consistency throughout post-production.</li>
+          <li>Delivered final masters for television, OTT platforms, YouTube, and social media.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <!-- SLIDER 3 -->
-  <div class="ba-slider">
-    <img src="before3.jpg" class="before-img">
-    <img src="after3.jpg" class="after-img">
-    <div class="ba-label before">Before</div>
-    <div class="ba-label after">After</div>
-    <div class="ba-handle"></div>
-  </div>
+  <!-- SKILLS -->
+  <section class="reveal">
+    <div class="section-head">
+      <span class="num">02</span>
+      <h3>Skills</h3>
+      <span class="rule"></span>
+    </div>
+    <div class="tag-panel">
+      <div class="tags">
+        <span class="tag">DaVinci Resolve</span>
+        <span class="tag">Color Grading</span>
+        <span class="tag">DI Workflow</span>
+        <span class="tag">Look Development</span>
+        <span class="tag">Film Emulation</span>
+        <span class="tag">HDR &amp; SDR Color Management</span>
+        <span class="tag">Conforming</span>
+        <span class="tag">Online Finishing</span>
+        <span class="tag">DCP Creation</span>
+        <span class="tag">Color Management</span>
+        <span class="tag">Skin Tone Matching</span>
+        <span class="tag">Shot Matching</span>
+        <span class="tag">Adobe Premiere Pro</span>
+        <span class="tag">Final Cut Pro</span>
+        <span class="tag">Adobe Lightroom</span>
+      </div>
+    </div>
+  </section>
 
-  <div class="section-title">Contact</div>
-  <p class="contact">
-    📧 manumadhav3625@gmail.com<br>
-    📞 +91 70129 03297<br>
-    📍 Thiruvananthapuram, India
-  </p>
+  <!-- SELECTED PROJECTS -->
+  <section class="reveal">
+    <div class="section-head">
+      <span class="num">03</span>
+      <h3>Selected Projects</h3>
+      <span class="rule"></span>
+    </div>
+    <div class="tag-panel">
+      <div class="tags">
+        <span class="tag">Commercials</span>
+        <span class="tag">Brand Campaigns</span>
+        <span class="tag">Music Videos</span>
+        <span class="tag">Digital Advertisements</span>
+        <span class="tag">Social Media Campaigns</span>
+        <span class="tag">Corporate Films</span>
+        <span class="tag">Promotional Videos</span>
+      </div>
+    </div>
+  </section>
 
-  <footer>© 2026 Manu Madhav · DI Colorist & Editor</footer>
+  <!-- EDUCATION -->
+  <section class="reveal">
+    <div class="section-head">
+      <span class="num">04</span>
+      <h3>Education</h3>
+      <span class="rule"></span>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <div class="edu-title">Diploma in Digital Intermediate (DI)</div>
+        <div class="edu-sub">DaVinci Media College, Chennai</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="reveal">
+    <div class="section-head">
+      <span class="num">05</span>
+      <h3>Before / After Grades</h3>
+      <span class="rule"></span>
+    </div>
+
+    <div class="ba-slider">
+      <img src="before1.jpg" class="before-img">
+      <img src="after1.jpg" class="after-img">
+      <div class="ba-label before">Before</div>
+      <div class="ba-label after">After</div>
+      <div class="ba-handle"></div>
+    </div>
+
+    <div class="ba-slider">
+      <img src="before2.jpg" class="before-img">
+      <img src="after2.jpg" class="after-img">
+      <div class="ba-label before">Before</div>
+      <div class="ba-label after">After</div>
+      <div class="ba-handle"></div>
+    </div>
+
+    <div class="ba-slider">
+      <img src="before3.jpg" class="before-img">
+      <img src="after3.jpg" class="after-img">
+      <div class="ba-label before">Before</div>
+      <div class="ba-label after">After</div>
+      <div class="ba-handle"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="reveal">
+    <div class="section-head">
+      <span class="num">06</span>
+      <h3>Contact</h3>
+      <span class="rule"></span>
+    </div>
+    <div class="contact-panel">
+      <div class="row">
+        <div>📧 <span>manumadhav3625@gmail.com</span></div>
+        <div>📞 <span>+91 70129 03297</span></div>
+        <div>📍 <span>Thiruvananthapuram, India</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Manu Madhav · DI Colorist &amp; Colorist</footer>
 </div>
 
 <script>
+  // Before/After sliders
   document.querySelectorAll(".ba-slider").forEach(slider => {
     const handle = slider.querySelector(".ba-handle");
     const afterImg = slider.querySelector(".after-img");
@@ -396,6 +667,18 @@
       if (dragging) move(e.touches[0].clientX);
     });
   });
+
+  // Scroll-reveal animations
+  const revealEls = document.querySelectorAll(".reveal");
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
 </script>
 
 </body>
